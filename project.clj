@@ -6,6 +6,7 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.9.0"]
                  [org.clojure/clojurescript "1.9.946"]
+                 [binaryage/oops "0.5.8"]
                  [re-frame "0.10.4"]
                  [reagent "0.7.0"]
                  [com.degel/iron "0.2.0"]]
