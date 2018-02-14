@@ -2,7 +2,7 @@
 ;;; Copyright (c) 2018, David Goldfarb
 
 (ns radon.core
-  #?(:cljs (:require-macros [radon.core :refer [def-native-components]]))
+  #?(:cljs [:require-macros [radon.core :refer [def-native-components]]])
   (:require
    [clojure.spec.alpha :as s]
    [oops.core :as oops]
@@ -19,10 +19,19 @@
          (r/adapt-react-class class)
          (console :error "React class " class " not found.")))
 
+     (def require-once (memoize js/require))
+
+     (defn get-js-dep [module reference]
+       "Get an object from a js module."
+       (let [module (if (string? module)
+                      (require-once module)
+                      module)]
+         (oops/oget+ module reference)))
+
      (defn get-class
        "Extract React class from JavaScript module and adapt as Reagent component."
        [module class-name]
-       (adapt-class (oops/oget+ module class-name)))))
+       (adapt-class (get-js-dep module class-name)))))
 
 #?(:clj
    (defmacro def-native-components
@@ -33,9 +42,9 @@
       [TODO] Weird bug that the js/require here seems to crash figwheel, unless the same module was previously
       require'd from .cljs. If this bug is real, I'll probably have to remove the require from this macro.
       "
-     [module-name names-and-classes]
+     [module-form names-and-classes]
      (let [module (gensym "module-")]
-       `(let [~module (js/require ~module-name)]
+       `(let [~module ~module-form]
           ~@(map (fn [name]
                    (if (map? name)
                      (let [{:keys [name js-name]} name]

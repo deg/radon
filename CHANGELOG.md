@@ -4,7 +4,7 @@
 ### Changed
 _(nothing)_
 ### Added
-- def-native-components
+- Functions/macros to help load JS components
 ### Removed
 _(nothing)_
 ### Fixed
