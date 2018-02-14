@@ -40,11 +40,10 @@ PRs are welcome.
 
 == Setup
 
-image:https://img.shields.io/clojars/v/prismic.svg[Clojars]
 image:https://versions.deps.co/deg/radon/status.svg[Dependencies]
 
 
-:WARNING: More needed here 
+:WARNING: More needed here
 
 
 If you want to contribute to this project, you will want to test your changes. You can
