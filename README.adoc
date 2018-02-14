@@ -1,0 +1,79 @@
+= Radon
+
+== Introduction
+
+Radon is part of my elemental series of ClojureScript support projects, which also
+includes https://github.com/deg/sodium[Sodium] and https://github.com/deg/iron[Iron],
+with more to come soon (I hope).
+
+Radon offers tools to make it easier to write
+https://facebook.github.io/react-native/[React Native] applications in ClojureScript.
+
+I started this project in February 2018, when I was still _very_ new to React Native.
+As I write these words, I am only a couple of weeks from first touching this area, and
+have not yet completed any real project.  So, tread carefully. My idea of best practices
+and tools may change radically as I learn more. This project may change or you may find
+that I've made mistakes.
+
+Despite that warning, I do hope that this project is useful. As I learn, I am collecting
+tidbits from other projects; sometimes cleaning them up; and inclduing them here. I am
+very receptive to PRs to help this project grow. I hope it becomes a useful resource for
+all of us trying to tame React Native in ClojureScript.
+
+Radon owes a debt of gratitude to many other projects, especially
+https://github.com/artemyarulin/ktoa[ktoa], from which I have learned much.
+
+
+=== Why "Radon"?
+
+I've adopted element names for this series of projects. Radon, if you squint your ears a
+bit, sounds like React Native.
+
+=== State of this project
+
+Radon is still a early work in progress. I am using it to help me with other projects
+and have only addded functionality that I need and can test.  Radon will only grow as
+it helps me (or other contributers) accomplish what they need. If you need features now,
+PRs are welcome.
+
+=== Background
+
+== Setup
+
+image:https://img.shields.io/clojars/v/prismic.svg[Clojars]
+image:https://versions.deps.co/deg/radon/status.svg[Dependencies]
+
+
+:WARNING: More needed here 
+
+
+If you want to contribute to this project, you will want to test your changes. You can
+extend the (very minimal) tests inside Radon, but you will probably need to really test
+by using Radon in a ClojureScript project. The easiest way to do this, while you are
+changing Radon, is by using Leiningen's
+[checkouts directory](https://github.com/technomancy/leiningen/blob/master/doc/TUTORIAL.md#checkout-dependencies)
+feature by sym-linking directly to your copy of Radon.
+
+== Using Radon
+
+=== Internals
+
+=== Testing
+
+`lein doo phantom test auto` will run the few unit tests I've written so far. More are
+needed. PRs especially welcome here.
+
+== Useful references
+
+
+
+== Questions
+
+I can usually be found on the [Clojurians Slack](https://clojurians.net) slack
+channels. My handle is @deg. Email is also fine.
+
+== License
+
+Copyright © 2018, David Goldfarb <deg@degel.com>
+
+Licensed under the Eclipse Public License.
